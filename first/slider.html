@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+.number-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    overflow: hidden; 
+    width: 50px;
+    margin: 0 5px;
+    position: relative;
+}
+.number-selector ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.1s ease-in-out;
+    position: absolute;
+    top: calc(50% - 12px);
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-transition: transform 0.1s ease-in-out;
+    -moz-transition: transform 0.1s ease-in-out;
+    -ms-transition: transform 0.1s ease-in-out;
+    -o-transition: transform 0.1s ease-in-out;
+}
+.number-selector li {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+.number-selectors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ccc;
+}
+.number-selectors .active {
+    color: var(--txtblColor); 
+    font-weight: 600;
+}
+.slider_num_input{ 
+    text-align: center;
+    font-size: 24px;
+    padding: 0!important;
+    margin-top: 25px!important;
+}
+
+
+</style>
+<body>
+    <div id="weightBox" class="extra-form h-type handle-open" data-value="weightBox">
+        <center>
+            <p class="from-tit">Вес (тонны):</p>
+        </center>
+        <!--  class="spec-inp mt-sm selections" type="number" data-value="boxWeight" data-show="showBoxWeight" -->
+        <form action="#" class="d-flexb column mt-2">
+     <div class="number-selectors">
+        <div class="number-selector" id="selector1">
+            <ul>
+                <li>0</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+            </ul>
+        </div>
+        <div class="number-selector" id="selector2">
+            <ul>
+                <li>0</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+            </ul>
+        </div>
+        
+    </div>
+    <input  class="spec-inp mt-sm selections slider_num_input" type="number" data-value="boxWeight" data-show="showBoxWeight" id="selectedNumber" value="00" >
+              
+            <button data-value="boxWeight" class="btn btn-1 mt-4 saveParams">Применить</button>
+            <p class="from-close mt-1">ЗАКРЫТЬ</p>
+        </form>
+    </div>
+
+    <div id="kubBox" class="extra-form h-type handle-open" data-value="kubBox">
+        <center>
+            <p class="from-tit">Объём (куб.м):</p>
+        </center>
+        <!--  class="spec-inp mt-sm selections" type="number" data-value="boxWeight" data-show="showBoxWeight" -->
+        <form action="#" class="d-flexb column mt-2">
+     <div class="number-selectors">
+        <div class="number-selector" id="selector3">
+            <ul>
+                <li>0</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+            </ul>
+        </div>
+        <div class="number-selector" id="selector4">
+            <ul>
+                <li>0</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+            </ul>
+        </div>
+        
+    </div>
+    <input  class="spec-inp mt-sm selections slider_num_input" type="number" data-value="boxKub" data-show="showBoxKub" id="selectedNumber1" value="00" min="0" >
+              
+            <button data-value="boxKub" class="btn btn-1 mt-4 saveParams">Применить</button>
+            <p class="from-close mt-1">ЗАКРЫТЬ</p>
+        </form>
+    </div>
+
+    <script>
+        document.querySelectorAll('.number-selector').forEach((selector, index) => {
+    const ul = selector.querySelector('ul');
+    const items = ul.querySelectorAll('li');
+    let currentIndex = 0;
+    let startY = 0;
+    let endY = 0;
+    const scrollThreshold = 5; // Decreased threshold for smoother scrolling
+
+    const updateInput = () => {
+        const weightSelectors = document.querySelectorAll('#weightBox .number-selector');
+        const weightValues = Array.from(weightSelectors).map(sel => {
+            const activeItem = sel.querySelector('.active');
+            return activeItem ? activeItem.textContent : '0';
+        });
+        document.getElementById('selectedNumber').value = weightValues.join('');
+
+        const kubSelectors = document.querySelectorAll('#kubBox .number-selector');
+        const kubValues = Array.from(kubSelectors).map(sel => {
+            const activeItem = sel.querySelector('.active');
+            return activeItem ? activeItem.textContent : '0';
+        });
+        document.getElementById('selectedNumber1').value = kubValues.join('');
+    };
+
+    const setActive = () => {
+        items.forEach(item => item.classList.remove('active'));
+        items[currentIndex].classList.add('active');
+        ul.style.transform = `translateY(${-currentIndex * 30}px)`;
+        updateInput();
+    };
+
+    selector.addEventListener('wheel', (event) => {
+        event.preventDefault();
+        currentIndex = (currentIndex + (event.deltaY > 0 ? 1 : -1) + items.length) % items.length;
+        setActive();
+    });
+
+    selector.addEventListener('touchstart', (event) => {
+        startY = event.touches[0].clientY;
+    });
+
+    selector.addEventListener('touchmove', (event) => {
+        event.preventDefault();
+        endY = event.touches[0].clientY;
+    });
+
+    selector.addEventListener('touchend', () => {
+        const deltaY = startY - endY;
+        if (Math.abs(deltaY) > scrollThreshold) {
+            currentIndex = (currentIndex + (deltaY > 0 ? 1 : -1) + items.length) % items.length;
+            setActive();
+        }
+    });
+
+    setActive();
+});
+    </script>
+</body>
+</html>

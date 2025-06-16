@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>added boxes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="extra-form filter handle-open" id="filter" data-value="filter">
+        <center>
+            <p class="from-tit">фильтр</p> 
+        </center>
+        <div class="w-100 pt-1"><label>Откуда</label>
+            <div id="filterFrom" class="info-container mt-1">
+                <ul id="listCity" class="list-city">
+                    <li class="city-item" data-city="Махачкала">Махачкала</li>
+                    <li class="city-item" data-city="Ленина">Ленина</li>
+                    <li class="city-item" data-city="Воронеж">Воронеж</li>
+                    <li class="city-item" data-city="Ростов-на-Дону">РостовнаДону</li>
+                    <li class="city-item" data-city="Москва">Москва</li>
+                    <li class="city-item" data-city="Санкт-Петербург">СанктПетербург</li>
+                </ul>
+            </div>
+        </div>
+        <div class="w-100 pt-2"><label>Куда</label>
+            <div id="filterTo" class="info-container mt-1">
+                <ul id="listCity2" class="list-city" style="margin-top:90px">
+                    <li class="city-item" data-city="Махачкала">Махачкала</li>
+                    <li class="city-item" data-city="Ленина">Ленина</li>
+                    <li class="city-item" data-city="Воронеж">Воронеж</li>
+                    <li class="city-item" data-city="Ростов-на-Дону">РостовнаДону</li>
+                    <li class="city-item" data-city="Москва">Москва</li>
+                    <li class="city-item" data-city="Санкт-Петербург">СанктПетербург</li>
+                </ul>
+            </div>
+        </div>
+        <div class="w-100 pt-2"><label>Наименование груза</label><input class="spec-inp mt-1" type="text " required
+                name="where" placeholder="Наименование груза "></div>
+        <div class="w-100 pt-2"><label>Контактное лицо</label><input class="spec-inp mt-1" type="text " required
+                name="where" placeholder="Телефон или Telegram"></div>
+        <div class="w-100 pt-2"><label>Выберите вариант</label><select class="spec-inp mt-1" type="text " required
+                name="where" placeholder="Телефон или Telegram">
+                <option value="">Жалобы ...</option>
+                <option value="">Жалобы ...</option>
+                <option value="">Жалобы ...</option>
+            </select></div>
+        <div class="w-100 pt-2"><label>Сортировать</label><select class="spec-inp mt-1" type="text " required
+                name="where" placeholder="Телефон или Telegram">
+                <option value="">От высокого к низкому ...</option>
+                <option value="">От высокого к низкому ...</option>
+                <option value="">От высокого к низкому ...</option>
+            </select></div>
+        <center><button type="submit" class="btn btn-1 mt-2">Поиск</button>
+            <p class="from-close mt-1">ЗАКРЫТЬ</p>
+        </center>
+    </div>
+    <div class="extra-form about-card handle-open" id="about" data-value="about">
+        <center>
+            <p class="from-tit">о грузе</p>
+        </center>
+        <div class="mt-2 d-flexb gap-10">
+            <p>Откуда</p>
+            <div class="dot-space"></div>
+            <p>Махачкала</p>
+        </div>
+        <div class="mt-2 d-flexb gap-10">
+            <p>Куда</p>
+            <div class="dot-space"></div>
+            <p>Москва</p>
+        </div>
+        <div class="mt-2 d-flexb gap-10">
+            <p>Название груза</p>
+            <div class="dot-space"></div>
+            <p>Груз</p>
+        </div>
+        <div class="mt-2 d-flexb gap-10">
+            <p>Вес</p>
+            <div class="dot-space"></div>
+            <p>20 Т</p>
+        </div>
+        <div class="mt-2 d-flexb gap-10">
+            <p>Объём</p>
+            <div class="dot-space"></div>
+            <p>30куб.м</p>
+        </div>
+        <div class="mt-2 d-flexb gap-10">
+            <p>Сумма платежа</p>
+            <div class="dot-space"></div>
+            <p>1000</p>
+        </div>
+        <div class="mt-2 d-flexb gap-10">
+            <p>Способ оплаты</p>
+            <div class="dot-space"></div>
+            <p>Оплата наличными</p>
+        </div>
+        <div class="mt-2 d-flexb gap-10">
+            <p>Дата доставки</p>
+            <div class="dot-space"></div>
+            <p>01/02/24 - 10/02/24</p>
+        </div>
+        <div class="mt-2 d-flexb gap-10">
+            <p>Тип кузова</p>
+            <div class="dot-space"></div>
+            <p>Рефрижератор</p>
+        </div>
+        <div class="mt-2 d-flexb gap-10">
+            <p>Номер телефона</p>
+            <div class="dot-space"></div>
+            <p>+7 (---) --- -- --</p>
+        </div>
+        <div class="mt-2 d-flexb gap-10">
+            <p>Telegram</p>
+            <div class="dot-space"></div>
+            <p>https://t.me/yourusername</p>
+        </div>
+        <div class="mt-2 d-flexbX gap-10">
+            <p>Комментарий</p>
+            <div class="dot-spaceX"><small>Lorem ipsum dolor sit amet consectetur. Adipiscing lorem facilisi</small>
+            </div>
+        </div>
+        <div class="d-flexb mt-2"><button class="added-btn btn-1">редактировать</button><button
+                class="added-btn btn-red">удалить</button></div>
+        <center>
+            <p class="from-close mt-1">ЗАКРЫТЬ</p>
+        </center>
+    </div>
+    <div class="blur" id="blur"></div>
+    <div class="navigation added">
+        <div class="d-flexbc">
+            <div class="adding-active non-active ps-2"><a href="./addBox.html">ДОБАВИТЬ ГРУЗ</a></div>
+            <div class="added-active pe-2"><a href="./added.html">МОИ ГРУЗЫ</a></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="d-flexbc gap-10 mt-3"><input type="text" class="myBoxesCardInp myInp" placeholder="Поиск по грузам">
+            <div class="myBoxesCardInp d-flexbc handle" data-value="filter"><img src="./assets/filt.svg" alt="filter">
+            </div>
+        </div>
+        <div class="row">
+            <div class="w-100 myBoxesCard mt-3">
+                <div class="d-flexb mb-1">
+                    <p class="cities"><span>Махачкала</span>-<span>Москва</span></p><span
+                        class="badge badge-success">1000 ₽</span>
+                </div><small class="types"><span>Электроника</span>,<span>5t</span>,<span>50м<sup>3</sup></span></small>
+                <div class="d-flexb mt-1">
+                    <div style="display:flex">
+                        <div class="status-parent me-sm">
+                            <div class="status-circle"></div>
+                        </div>
+                        <p>Онлайн</p>
+                    </div><button class="btn-1 handle" data-value="about">о грузе</button>
+                </div><br>
+                <hr><br>
+                <div class="d-flexb kordinats"><span><img src="./assets/EyeFill.svg"
+                            alt="views"><span>250</span></span><span><img src="./assets/cursor.svg"
+                            alt="clicks"><span>119</span></span><span><img src="./assets/danger.svg"
+                            alt="danger"><span>100</span></span></div>
+            </div>
+            <div class="w-100 myBoxesCard mt-3">
+                <div class="d-flexb mb-1">
+                    <p class="cities"><span>Махачкала</span>-<span>Москва</span></p><span
+                        class="badge badge-danger">1000 ₽</span>
+                </div><small class="types"><span>Электроника</span>,<span>5t</span>,<span>50м<sup>3</sup></span></small>
+                <div class="d-flexb mt-1">
+                    <div style="display:flex">
+                        <div class="status-parent offline me-sm">
+                            <div class="status-circle"></div>
+                        </div>
+                        <p>Офлайн</p>
+                    </div><button class="btn-1 handle" data-value="about">о грузе</button>
+                </div><br>
+                <hr><br>
+                <div class="d-flexb kordinats"><span><img src="./assets/EyeFill.svg"
+                            alt="views"><span>250</span></span><span><img src="./assets/cursor.svg"
+                            alt="clicks"><span>119</span></span><span><img src="./assets/danger.svg"
+                            alt="danger"><span>100</span></span></div>
+            </div>
+            <div class="w-100 myBoxesCard mt-3">
+                <div class="d-flexb mb-1">
+                    <p class="cities"><span>Махачкала</span>-<span>Москва</span></p><span class="badge badge-warn">1000
+                        ₽</span>
+                </div><small class="types"><span>Электроника</span>,<span>5t</span>,<span>50м<sup>3</sup></span></small>
+                <div class="d-flexb mt-1">
+                    <div style="display:flex">
+                        <div class="status-parent me-sm">
+                            <div class="status-circle"></div>
+                        </div>
+                        <p>Онлайн</p>
+                    </div><button class="btn-1 handle" data-value="about">о грузе</button>
+                </div><br>
+                <hr><br>
+                <div class="d-flexb kordinats"><span><img src="./assets/EyeFill.svg"
+                            alt="views"><span>250</span></span><span><img src="./assets/cursor.svg"
+                            alt="clicks"><span>119</span></span><span><img src="./assets/danger.svg"
+                            alt="danger"><span>100</span></span></div>
+            </div>
+            <div class="w-100 myBoxesCard mt-3">
+                <div class="d-flexb mb-1">
+                    <p class="cities"><span>Махачкала</span>-<span>Москва</span></p><span
+                        class="badge badge-success">1000 ₽</span>
+                </div><small class="types"><span>Электроника</span>,<span>5t</span>,<span>50м<sup>3</sup></span></small>
+                <div class="d-flexb mt-1">
+                    <div style="display:flex">
+                        <div class="status-parent me-sm">
+                            <div class="status-circle"></div>
+                        </div>
+                        <p>Онлайн</p>
+                    </div><button class="btn-1 handle" data-value="about">о грузе</button>
+                </div><br>
+                <hr><br>
+                <div class="d-flexb kordinats"><span><img src="./assets/EyeFill.svg" class="me-sm"
+                            alt="views"><span>250</span></span><span><img src="./assets/cursor.svg"
+                            alt="clicks"><span>119</span></span><span><img src="./assets/danger.svg"
+                            alt="danger"><span>100</span></span></div>
+            </div>
+            <div class="w-100 mt-3 mb-4">
+                <div class="pagination d-flexb">
+                    <div class="panel-left"><img width="25%" src="./assets/left.svg" alt=""></div>
+                    <div class="info">
+                        <p><span>1</span><span>из</span><span>10</span></p>
+                    </div>
+                    <div class="panel-right btn-1"><img width="25%" src="./assets/right.svg" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+
+</html>

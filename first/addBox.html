@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>add box</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="from" class="extra-form h-from handle-open" data-value="from">
+        <center>
+            <p class="from-tit">Откуда</p> 
+        </center>
+        <form action="#" class="d-flexb column mt-2">
+            <div class="w-100"><label for="where">Страна</label><br><input data-value="handleFromValue"
+                    data-show="showFrom" class="spec-inp mt-sm selections" type="text" required name="where"
+                    placeholder="Дагестан "></div>
+            <div class="w-100 mt-2"><label for="where">Город...</label><br><input data-value="handleFromValue"
+                    data-show="showFrom" class="spec-inp mt-sm selections" type="text" required name="where"
+                    placeholder="Махачкала "></div>
+            <div class="w-100 mt-2"><label for="where">Адрес</label><br><input data-value="handleFromValue"
+                    data-show="showFrom" required class="spec-inp mt-sm selections" type="text" name="where"
+                    placeholder="Ленина 34 "></div><button type="submit" class="btn btn-1 mt-2 saveParams"
+                data-value="handleFromValue">Применить</button>
+            <p class="from-close mt-2">ЗАКРЫТЬ</p>
+        </form>
+    </div>
+    <div id="to" class="extra-form h-to handle-open" data-value="fieldTo">
+        <center>
+            <p class="from-tit">Куда?</p>
+        </center>
+        <form action="#" class="d-flexb column mt-2">
+            <div class="w-100"><label for="where">Страна</label><br><input data-value="handleToValue" data-show="showTo"
+                    class="spec-inp mt-sm selections" type="text" required name="where" placeholder="Дагестан "></div>
+            <div class="w-100 mt-2"><label for="where">Город...</label><br><input data-value="handleToValue"
+                    data-show="showTo" class="spec-inp mt-sm selections" type="text" required name="where"
+                    placeholder="Махачкала "></div>
+            <div class="w-100 mt-2"><label for="where">Адрес</label><br><input data-value="handleToValue"
+                    data-show="showTo" required class="spec-inp mt-sm selections" type="text" name="where"
+                    placeholder="Ленина 34 "></div><button type="submit" class="btn btn-1 mt-2 saveParams"
+                data-value="handleToValue">Применить</button>
+            <p class="from-close mt-2">ЗАКРЫТЬ</p>
+        </form>
+    </div>
+    <div id="payment" class="extra-form h-payment handle-open" data-value="payment">
+        <center>
+            <p class="from-tit">Сумма платежа</p>
+        </center>
+        <form action="#" class="d-flexb column mt-2">
+            <div class="w-100"><label for="where">Наличные:</label><br><input data-value="handleMoneyValue"
+                    data-show="showMoney" class="spec-inp mt-sm selections" id="paymentValue" type="text" required
+                    name="where" placeholder="Введите сумму... "></div>
+            <div class="w-100 extra-line mt-2">
+                <div id="cursorLine" class="cursor-line"></div>
+            </div>
+            <div class="w-100 mt-3"><label for="where">С НДС:</label><br><input readonly="readonly" id="withNDS"
+                    class="spec-inp mt-sm" type="tel" required name="where" placeholder="Введите сумму... "></div>
+            <div class="w-100 mt-2"><label for="where">Без НДС:</label><br><input required readonly="readonly"
+                    id="noNDS" class="spec-inp mt-sm" type="text" name="where" placeholder="Введите сумму..."></div>
+            <div class="w-100 mt-2"><input type="checkbox"><label for="">Запрос ставки</label></div><button
+                type="submit" class="btn btn-1 mt-2 saveParams" data-value="handleMoneyValue">Применить</button>
+            <p class="from-close mt-1">ЗАКРЫТЬ</p>
+        </form>
+    </div>
+    <div id="type" class="extra-form h-type handle-open" data-value="type">
+        <center>
+            <p class="from-tit">Способ оплаты</p>
+        </center>
+        <form action="#" class="d-flexb column mt-2">
+            <div class="w-100 mt-1"><label for="where">Выберите вариант</label><br><select id="paymentType"
+                    class="spec-inp mt-sm selections" data-value="paymentType" data-show="showPaymentType" required
+                    name="where" placeholder="Введите сумму... ">
+                    <option value="Оплата наличными" selected="selected">Оплата наличными...</option>
+                    <option value="Оплата частями">Оплата частями ...</option>
+                </select></div>
+            <div id="secondHandler" style="display:none" class="w-100">
+                <div class="w-100 extra-line1 mt-2">
+                    <div class="d-flexb"><label for="where">Первый платеж</label>
+                        <p style="color:#05388b;font-size:12px" class="d-flexb"><span id="firstPay"
+                                class="me-sm">1%</span><img src="./assets/qes.svg" alt="ques"></p>
+                    </div><input type="range" min="1" value="1" max="100" class="extra-cursor1 w-100" id="extraCursor">
+                </div>
+                <div class="w-100 mt-2">
+                    <div class="d-flexb"><label for="where">Второй платеж</label>
+                        <p style="color:#05388b;font-size:12px" class="d-flexb"><span class="me-sm">1000₽</span><img
+                                src="./assets/qes.svg" alt="ques"></p>
+                    </div>
+                    <p style="font-size:10px;color:#8ca1c4" class="mt-1">Остаток суммы оплачивается после
+                        выгрузки,в<br>течение нескольких банковских дней</p>
+                </div>
+            </div><button class="btn btn-1 mt-2 saveParams" data-value="paymentType">Применить</button>
+            <p class="from-close mt-1">ЗАКРЫТЬ</p>
+        </form>
+    </div>
+    <div id="typeCarry" class="extra-form h-type handle-open" data-value="typeCarry">
+        <center>
+            <p class="from-tit">Тип кузова</p>
+        </center>
+        <form action="#" class="d-flexb column mt-2">
+            <div class="w-100"><label for="where">Выберите вариант</label><br><select class="spec-inp mt-sm selections"
+                    data-value="carringType" data-show="showCarringType" required name="where"
+                    placeholder="Введите сумму... ">
+                    <option value="Рефрижератор">Рефрижератор</option>
+                    <option value="value">value</option>
+                    <option value="value">value</option>
+                    <option value="value">value</option>
+                    <option value="value">value</option>
+                </select></div><button data-value="carringType" class="btn btn-1 mt-4 saveParams">Применить</button>
+            <p class="from-close mt-1">ЗАКРЫТЬ</p>
+        </form>
+    </div>
+    <div id="typeBox" class="extra-form h-type handle-open" data-value="typeBox">
+        <center>
+            <p class="from-tit">Тип загрузки</p>
+        </center>
+        <form action="#" class="d-flexb column mt-2">
+            <div class="w-100"><label for="where">Выберите вариант</label><br><select class="spec-inp mt-sm selections"
+                    data-value="toType" data-show="showToType" required name="where"
+                    placeholder="Введите сумму... ">
+                    <option value="Рефрижератор">Рефрижератор</option>
+                    <option value="value">value</option>
+                    <option value="value">value</option>
+                    <option value="value">value</option>
+                    <option value="value">value</option>
+                </select></div><button data-value="toType" class="btn btn-1 mt-4 saveParams">Применить</button>
+            <p class="from-close mt-1">ЗАКРЫТЬ</p>
+        </form>
+    </div>
+
+    <div id="weightBox" class="extra-form h-type handle-open" data-value="weightBox">
+        <center>
+            <p class="from-tit">Вес (тонны):</p>
+        </center>
+        <!--  class="spec-inp mt-sm selections" type="number" data-value="boxWeight" data-show="showBoxWeight" -->
+        <form action="#" class="d-flexb column mt-2">
+     <div class="number-selectors">
+        <div class="number-selector" id="selector1">
+            <ul>
+                <li>0</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+            </ul>
+        </div>
+        <div class="number-selector" id="selector2">
+            <ul>
+                <li>0</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+            </ul>
+        </div>
+        
+    </div>
+    <input  class="spec-inp mt-sm selections slider_num_input" type="number" data-value="boxWeight" data-show="showBoxWeight" id="selectedNumber" value="00" >
+              
+            <button data-value="boxWeight" class="btn btn-1 mt-4 saveParams">Применить</button>
+            <p class="from-close mt-1">ЗАКРЫТЬ</p>
+        </form>
+    </div>
+
+    <div id="kubBox" class="extra-form h-type handle-open" data-value="kubBox">
+        <center>
+            <p class="from-tit">Объём (куб.м):</p>
+        </center>
+        <!--  class="spec-inp mt-sm selections" type="number" data-value="boxWeight" data-show="showBoxWeight" -->
+        <form action="#" class="d-flexb column mt-2">
+     <div class="number-selectors">
+        <div class="number-selector" id="selector3">
+            <ul>
+                <li>0</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+            </ul>
+        </div>
+        <div class="number-selector" id="selector4">
+            <ul>
+                <li>0</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+            </ul>
+        </div>
+        
+    </div>
+    <input  class="spec-inp mt-sm selections slider_num_input" type="number" data-value="boxKub" data-show="showBoxKub" id="selectedNumber1" value="00" min="0" >
+              
+            <button data-value="boxKub" class="btn btn-1 mt-4 saveParams">Применить</button>
+            <p class="from-close mt-1">ЗАКРЫТЬ</p>
+        </form>
+    </div>
+
+    <div id="datee" class="extra-form h-date handle-open" data-value="datee">
+        <center>
+            <p class="from-tit">Когда груз готов</p>
+        </center>
+        <form action="#" class="row mt-2">
+            <div class="w-50"><label for="where">Oт</label><br><input type="date" class="spec-inp mt-sm selections"
+                    data-value="dateParams" data-show="showDateParams"></div>
+            <div class="w-50"><label for="where">Oт</label><br><input type="date" class="spec-inp mt-sm selections"
+                    data-value="dateParams" data-show="showDateParams"></div>
+            <div class="w-100 mt-2">
+                <div class="d-flex alg-center"><input type="radio" name="now" class="me-sm selections" value="ready"
+                        data-value="dateParams"><label for="now"><small>Груз готов к загрузке сейчас</small></label>
+                </div>
+                <div class="d-flex alg-center"><input type="radio" name="now" class="me-sm selections"
+                        value="always-ready" data-value="dateParams"><label for="now" class="mt-1"><small>Груз доступен
+                            для загрузки постоянно</small></label></div>
+            </div><button class="btn btn-1 mt-3 saveParams" data-value="dateParams"
+                style="margin-inline:auto">Применить</button>
+            <p class="from-close mt-1" style="margin-inline:auto">ЗАКРЫТЬ</p>
+        </form>
+    </div>
+    <div id="access" class="extra-form h-acces txt-center handle-open" data-value="access">
+        <p class="from-tit">Подтверждение добавления груза</p>
+        <p class="from-des mt-2">Вы уверены, что хотите добавить этот груз?</p><button type="submit"
+            class="btn btn-1 mt-4 handle" data-value="success">Да, добавить</button>
+        <p class="from-close mt-1">Отмена</p>
+    </div>
+    <div id="success" class="extra-form h-succ handle-open" data-value="success">
+        <center><img src="./assets/succ.svg" alt="success">
+            <p class="from-tit mt-2">Груз успешно добавлен</p>
+            <div class="from-des mt-1">Ваш груз был успешно добавлен</div><button class="btn btn-1 mt-4"
+                id="successfully">ОК</button>
+        </center>
+    </div>
+    <div id="error" class="extra-form h-error handle-open" data-value="error">
+        <center><img src="./assets/error.svg" alt="try again">
+            <p class="from-tit mt-2">Ошибка при добавлении груза</p>
+            <div class="from-des mt-1">Произошла ошибка. Пожалуйста, проверьте введенные данные или попробуйте снова
+            </div><button class="btn btn-1 mt-4">Закрыть</button>
+        </center>
+    </div>
+    <div id="blur" class="blur"></div>
+    <div class="navigation adding">
+        <div class="container d-flexbc">
+            <div class="adding-active"><a href="./addBox.html">ДОБАВИТЬ ГРУЗ</a></div>
+            <div class="active"><a href="./added.html">МОИ ГРУЗЫ</a></div>
+        </div>
+        <form action="#" class="addBox">
+            <div class="container-fluid">
+                <div class="row pt-2">
+                    <div class="w-50 handle" data-value="from"><label for="where">Откуда?</label><br><input
+                            readonly="readonly" required data-show="showFrom" class="spec-inp mt-sm showers" type="text"
+                            name="where" placeholder="Город..."></div>
+                    <div class="w-50 handle" data-value="fieldTo"><label for="where">Куда?</label><br><input required
+                            readonly="readonly" data-show="showTo" class="spec-inp mt-sm showers" type="text"
+                            name="where" placeholder="Город..."></div>
+                    <div class="w-100 mt-2"><label for="where">Название груза?</label><br><input required
+                            class="spec-inp mt-1" type="text" name="where" placeholder="Название груза ..."></div>
+                    <div class="w-50 mt-2 handle" data-value="weightBox"><label for="where">Вес (тонны):</label><br><input required 
+                            class="spec-inp mt-sm showers" data-show="showBoxWeight" type="text" name="where" placeholder="1000" readonly></div>
+
+                    <div class="w-50 mt-2 handle" data-value="kubBox"><label for="where">Объём (куб.м):</label><br><input data-show="showBoxKub" required readonly
+                            class="spec-inp mt-sm showers" type="text" name="where" placeholder="1000"></div>
+                    <div class="w-50 mt-2 handle" data-value="payment"><label for="where">Сумма платежа:</label><br>
+                        <div style="position:relative"><img data-value="paymentValue" class="quesToolTip showHowItworks"
+                                src="./assets/qes.svg" alt="qes">
+                            <div class="show_area" data-value="paymentValue">Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Soluta minima culpa ut possimus. Autem, ab.</div><input required
+                                readonly="readonly" class="spec-inp mt-sm showers" data-show="showMoney" type="text"
+                                name="where" placeholder="Сумма платежа">
+                        </div>
+                    </div>
+                    <div class="w-50 mt-2 handle" data-value="type"><label for="where">Способ оплаты:</label><br>
+                        <div style="position:relative"><img data-value="typePay" class="quesToolTip showHowItworks"
+                                src="./assets/qes.svg" alt="qes">
+                            <div class="show_area" data-value="typePay">Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Soluta minima culpa ut possimus. Autem, ab.</div><input
+                                readonly="readonly" required class="spec-inp mt-sm showers" data-show="showPaymentType"
+                                type="text" name="where" placeholder="Способ оплаты:">
+                        </div>
+                    </div>
+                    <div class="w-50 mt-2 handle" data-value="typeBox"><label for="where">Тип загрузки:</label><br>
+                        <div style="position:relative"><img data-value="typeBox" class="quesToolTip showHowItworks"
+                                src="./assets/qes.svg" alt="qes">
+                            <div class="show_area" data-value="typeBox">Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Soluta minima culpa ut possimus. Autem, ab.</div><input
+                                class="spec-inp mt-sm showers" data-show="showToType" type="text" name="where" placeholder="Тип загрузки" readonly>
+                        </div>
+                    </div>
+                    <div class="w-50 mt-2 handle" data-value="typeCarry"><label for="where">Тип кузова:</label><br>
+                        <div style="position:relative"><img data-value="typeCarry" class="quesToolTip showHowItworks"
+                                src="./assets/qes.svg" alt="qes">
+                            <div class="show_area" data-value="typeCarry">Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Soluta minima culpa ut possimus. Autem, ab.</div><input
+                                readonly="readonly" class="spec-inp mt-sm showers" data-show="showCarringType"
+                                type="text" name="where" placeholder="Контейнер">
+                        </div>
+                    </div>
+                    <div class="w-100 mt-2 handle" data-value="datee"><label for="where">Дата загрузки</label><br><input
+                            readonly="readonly" data-show="showDateParams" class="spec-inp mt-1 showers" type="text"
+                            name="where" placeholder="Дата загрузки"></div>
+                    <div class="w-100 mt-2"><label for="where">Номер телефона?</label><br><input class="spec-inp mt-1"
+                            type="tel" maxlength="11" name="where" placeholder="+7 (---) --- -- --"></div>
+                    <div id="addNum" class="w-100 d-flexbc mt-2 border-bottom" style="cursor:pointer">
+                        <p class="from-tit">Добавить другой номер телефона</p><i>+</i>
+                    </div>
+                    <div class="w-100 mt-2"><label for="where">Telegram?</label><br><input class="spec-inp mt-1"
+                            type="text" name="where" placeholder="https://t.me/yourusername"></div>
+                    <div class="w-100 mt-2"><label for="where">Добавить комментарий:</label><br><input
+                            class="spec-inp mt-1" type="text" name="where" placeholder="Добавить комментарий ..."></div>
+                    <div class="w-100 mt-2 mb-4">
+                        <center><button class="btn btn-1 mx-auto handle" data-value="access">Опубликовать</button>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </form>
+</body>
+<script src="app2.js"></script>
