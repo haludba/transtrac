@@ -4,22 +4,27 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Montserrat", sans-serif;
     transition: all 0.3s ease-in-out;
 }
 
 :root {
-    --blueColor: #05388b;
-    --lghblueColor: #bfd0ec;
-    --whiteColor: #fff;
-    --txtblColor: #0f005b;
-    --gray: #8ca1c4;
+    --blueColor: #0a84ff;
+    --lghblueColor: #64d2ff;
+    --whiteColor: #1c1c1e;
+    --txtblColor: #f2f2f7;
+    --gray: #8e8e93;
     --brRad: 50px;
     --success: #47c129;
     --warn: #fff73c;
     --danger: #b02b0d;
-    --alpgaGray: #bfd0ec4d;
-    --alphaColor: #8ca1c4;
+    --alpgaGray: #8e8e934d;
+    --alphaColor: #8e8e93;
+}
+
+body {
+    background-color: var(--whiteColor);
+    color: var(--txtblColor);
 }
 
 
